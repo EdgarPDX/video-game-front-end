@@ -17,15 +17,18 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Video Games</h1>
+          <header>
+          <h1>Video Games</h1>
+          </header>
+        
         <ul>
           {
             this.state.games.map((game) => {
               return <li>
-                  <p>Title:{game.name}</p>
-                  <p>Type:{game.type}</p>
-                  <p>Rating:{game.rating}</p>
-                  <p>Adult: {game.adult ? 'HELL YES': 'Heck No'}</p>
+                  <h2>{game.name}</h2>
+                  <p>Type:<span>{game.type}</span> </p>
+                  <p>Rating: <span>{game.rating}</span></p>
+                  <p>Adult: <span>{game.adult ? 'HELL YES': 'Heck No'}</span></p>
                   </li> 
             })
           }

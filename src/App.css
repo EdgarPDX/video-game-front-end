@@ -1,12 +1,25 @@
-.App {
+body{
   text-align: center;
 }
 
 ol, ul{
   list-style: none;
+  display: flex;
+  justify-content: space-around;
 
 }
 
-li{
+p,h2{
+  text-align: center;
+  font-weight: 700;
+}
+
+span{
+  font-weight: 500;
+}
+
+header{
+  height: 150px;
+  background-color: beige;
   text-align: center;
 }
