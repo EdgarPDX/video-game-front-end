@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { fetchGames } from './videogames-api.js'
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    games: []
+  }
+
+  componentDidMount = async () => {
+    const data = await fetchGames()
+
+    this.setState({
+      games: data.body
+    })
+  }
+  render() {
+    return (
+      <div>
+          <header>
+          <h1>Video Games</h1>
+          </header>
+        
+        <ul>
+          {
+            this.state.games.map((game) => {
+              return <li>
+                  <h2>{game.name}</h2>
+                  <p>Type:<span>{game.type}</span> </p>
+                  <p>Rating: <span>{game.rating}</span></p>
+                  <p>Adult: <span>{game.adult ? 'HELL YES': 'Heck No'}</span></p>
+                  </li> 
+            })
+          }
+        </ul>
+        
+      </div>
+    )
+  }
 }
-
-export default App;
