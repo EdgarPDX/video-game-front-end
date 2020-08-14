@@ -40,15 +40,18 @@ header{
 .links{
   display: flex;
   justify-content: space-evenly;
-  filter: saturate(100%) contrast(100%) drop-shadow(4px 5px 6px);
+  
 }
 
 .img-link{
+  color: black;
   height: 40%;
-  width: 40%;
+  width: 50%;
+  filter: saturate(100%) contrast(100%) drop-shadow(4px 3px 5px);
 }
 
 .img-link:hover{
+  color:goldenrod;
   transform: scale(1.05);
   
 }

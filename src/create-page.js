@@ -4,7 +4,7 @@ import './create.css';
 
 export default class CreatePage extends Component {
     state = {
-        name:'Blank',
+        name:'blank',
         rating: 5,
         adult: false,
         type: 'racing',
@@ -22,9 +22,9 @@ export default class CreatePage extends Component {
 
         this.setState({
             name:'',
-            rating: 5,
-            adult: false,
-            type: 'Adventure',
+            rating: '',
+            adult: '',
+            type: '',
         })
     }
 
@@ -55,10 +55,10 @@ export default class CreatePage extends Component {
                         <label>
                             Game Type: 
                             <select onChange={this.handleTypeChange} value={this.state.type}>
-                                <option value='adventure'>Single Player Adventure</option>
-                                <option value='racing'>Racing</option>
-                                <option value='open world'>Open World</option>
-                                <option value='multiplayer'>Multiplayer</option>
+                                <option value='Adventure'>Adventure</option>
+                                <option value='Racing'>Racing</option>
+                                <option value='Open World'>Open World</option>
+                                <option value='Multiplayer'>Multiplayer</option>
 
                             </select>
                         </label>
