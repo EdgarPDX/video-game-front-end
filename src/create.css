@@ -1,0 +1,8 @@
+.create-title{
+    filter: saturate(100%) contrast(100%) drop-shadow(8px 10px 12px);
+}
+
+form{
+    display: block;
+    align-content: center;
+}

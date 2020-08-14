@@ -2,32 +2,53 @@ body{
   text-align: center;
   
 }
+ main{
+  width: 100%;
+  height: 100%;
+ }
 
 ol, ul{
   list-style: none;
   display: flex;
   justify-content: space-around;
+  padding-inline-start: 0px;
 
 }
 
 p,h2{
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
+  
 
 }
 
 span{
-  font-weight: 500;
+  font-weight: 400;
 }
 
 header{
-  height: 150px;
-  background-color: beige;
+  
+  height: auto;
+  justify-content: center;
+  background-color: beige;  
  
 }
 
-h1{
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 5em;
+.title{
+  filter: saturate(100%) contrast(100%) drop-shadow(8px 10px 12px);
+}
+.links{
+  display: flex;
+  justify-content: space-evenly;
+  filter: saturate(100%) contrast(100%) drop-shadow(4px 5px 6px);
+}
+
+.img-link{
+  height: 40%;
+  width: 40%;
+}
+
+.img-link:hover{
+  transform: scale(1.05);
+  
 }
