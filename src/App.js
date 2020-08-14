@@ -1,40 +1,48 @@
-import './App.css';
-import { fetchGames } from './videogames-api.js'
 import React, { Component } from 'react'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+    Link,
+} from 'react-router-dom';
+import GameLibrary from './game-library.js';
+import DetailPage from './detail-page.js';
+import CreatePage from './create-page.js';
+import Header from './Header.js';
 
 export default class App extends Component {
-  state = {
-    games: []
-  }
-
-  componentDidMount = async () => {
-    const data = await fetchGames()
-
-    this.setState({
-      games: data.body
-    })
-  }
-  render() {
-    return (
-      <div>
-          <header>
-          <h1>Video Games</h1>
-          </header>
-        
-        <ul>
-          {
-            this.state.games.map((game) => {
-              return <li>
-                  <h2>{game.name}</h2>
-                  <p>Type:<span>{game.type}</span> </p>
-                  <p>Rating: <span>{game.rating}</span></p>
-                  <p>Adult: <span>{game.adult ? 'HELL YES': 'Heck No'}</span></p>
-                  </li> 
-            })
-          }
-        </ul>
-        
-      </div>
-    )
-  }
+    render() {
+        return (
+            <main>
+                <Router>
+                  <header>
+                    <Header />
+                      <div className='links'>
+                        <Link to = '/'><img className='img-link' src='./home.png' alt='home'/></Link>
+                        <Link to='/addgame'><img className='img-link' src='./addgame.png' alt='add-game'/></Link>
+                      </div>
+                    
+                    </header>
+                  
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <GameLibrary {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/addgame" 
+                            exact
+                            render={(routerProps) => <CreatePage {...routerProps} />} 
+                        />
+                        <Route 
+                          path="/detail/:id" 
+                          exact
+                          render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
+            </main>
+        )
+    }
 }
