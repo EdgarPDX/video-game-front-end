@@ -26,7 +26,7 @@ export default class GameLibrary extends Component {
                         <Link to={`/detail/${game.id}`} key ={`${game.id}-${game.name}`}>
                             <h2>{game.name}</h2>
                         </Link>
-                        <p>Type:<span> {game.type}</span> </p>
+                        <p>Type:<span> {game.type_id}</span> </p>
                         <p>Rating: <span> {game.rating}</span></p>
                         <p>Adult: <span> {game.adult ? 'HELL YES': 'Heck No'}</span></p>
                     </li> 

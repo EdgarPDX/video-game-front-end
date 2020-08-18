@@ -11,10 +11,27 @@ ol, ul{
   list-style: none;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   padding-inline-start: 0px;
+  
+}
+.content{
+  display: grid;
+  grid-template-columns: 200px 3fr 150px;
+  height: 100vh;
 
 }
 
+.sidebar{
+  background-color: honeydew;
+  border-right: solid gray 2px;
+  height: 100%;
+}
+.sidebar-right{
+  background-color: honeydew;
+  border-left: solid gray 2px;
+  height: 100%;
+}
 p,h2{
   text-align: center;
   font-weight: 600;
@@ -27,10 +44,11 @@ span{
 }
 
 header{
-  
-  height: auto;
+  display: grid;
+  grid-template-rows: 2fr .5fr;
   justify-content: center;
-  background-color: beige;  
+  background-color: beige; 
+  border-bottom: solid gray 2px;; 
  
 }
 
@@ -38,15 +56,13 @@ header{
   filter: saturate(100%) contrast(100%) drop-shadow(8px 10px 12px);
 }
 .links{
-  display: flex;
-  justify-content: space-evenly;
-  
+ 
 }
 
 .img-link{
   color: black;
-  height: 40%;
-  width: 50%;
+  /* height: 25%;
+  width:25%; */
   filter: saturate(100%) contrast(100%) drop-shadow(4px 3px 5px);
 }
 
