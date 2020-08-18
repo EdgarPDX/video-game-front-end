@@ -23,24 +23,27 @@ export default class App extends Component {
                       </div>
                     
                     </header>
-                  
-                    <Switch>
-                        <Route 
-                            path="/" 
+                  <div className="content">
+                      <div className="sidebar"></div>
+                        <Switch>
+                            <Route 
+                                path="/" 
+                                exact
+                                render={(routerProps) => <GameLibrary {...routerProps} />} 
+                            />
+                            <Route 
+                                path="/addgame" 
+                                exact
+                                render={(routerProps) => <CreatePage {...routerProps} />} 
+                            />
+                            <Route 
+                            path="/detail/:id" 
                             exact
-                            render={(routerProps) => <GameLibrary {...routerProps} />} 
-                        />
-                        <Route 
-                            path="/addgame" 
-                            exact
-                            render={(routerProps) => <CreatePage {...routerProps} />} 
-                        />
-                        <Route 
-                          path="/detail/:id" 
-                          exact
-                          render={(routerProps) => <DetailPage {...routerProps} />} 
-                        />
-                    </Switch>
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                            />
+                        </Switch>
+                        <div className="sidebar-right"></div>
+                    </div>
                 </Router>
             </main>
         )
